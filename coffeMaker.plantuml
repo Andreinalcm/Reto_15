@@ -19,7 +19,7 @@ class CoffeMaker {
 }
 
 class AdaptadorCM {
-    -adaptar: Connectable
+    -coffeMaker: CoffeMaker
     +turnOn()
     +turnOff()
     +isOn()
