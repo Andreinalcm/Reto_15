@@ -1,0 +1,45 @@
+@startuml Casa inteligente
+
+class Computer {
+    +turnOn()
+    +turnOff()
+    +isOn()
+}
+
+class Lamp {
+    +turnOn()
+    +turnOff()
+    +isOn()
+}
+
+class CoffeMaker {
+    +On()
+    +Off()
+    +isOff()
+}
+
+class AdaptadorCM {
+    -adaptar: Connectable
+    +turnOn()
+    +turnOff()
+    +isOn()
+}
+
+class TurnOnDevices {
+    +main(String[] args)
+    +turnOnDevice(Connectable device)
+}
+
+interface Connectable <<Interface>> {
+    +turnOn()
+    +turnOff()
+    +isOn()
+}
+
+TurnOnDevices --> Connectable
+Lamp --|> Connectable
+Computer --|> Connectable
+AdaptadorCM --|> Connectable
+AdaptadorCM --> CoffeMaker
+
+@enduml
